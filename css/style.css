@@ -1,0 +1,741 @@
+@charset "utf-8";
+/* 共通部分*/
+html{
+  font-size: 100%;
+}
+a{
+  text-decoration: none;
+  font-size: 18px;
+  color: #000000;
+}
+img{
+  max-width: 100%;
+  border-radius: 10px;
+}
+li{
+  list-style: none;
+}
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+/* フェードイン */
+.fade-in {
+  opacity: 0;
+  transition-duration: 3s;
+  transition-property: opacity,transform;
+}
+
+.fade-in-up {
+  transform: translate(0, 5px);
+}
+
+.fade-in-down {
+  transform: translate(0, -5px);
+}
+
+.fade-in-left {
+  transform: translate(-5px, 0);
+}
+
+.fade-in-right {
+  transform: translate(5px, 0);
+}
+
+.scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* header */
+header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background-color: #fff;
+  height: 100px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+.page-header{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+}
+.page-header h1{
+  position: absolute;
+  top: 17%;
+  left: 0%;
+}
+.page-header h1 img{
+  width: 70%;
+}
+.main-nav{
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+.main-nav li a{
+  padding: 10px;
+}
+.reserve{
+  background-color: #004BB1;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  width: 250px;
+}
+.reserve_text{
+  margin: 0 auto;
+  margin-bottom: 5px;
+  border:solid #fff 3px;
+  border-radius: 25px;
+  width: 70%;
+  font-weight: 500;
+}
+.reserve_num{
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: solid #fff;
+}
+.sp_burger{
+  display: none;
+}
+.sp_burger_menu{
+  display: none;
+}
+/* mainview */
+.mainview{
+  background-image: url(../images/mv/mainview.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
+  min-height: 100vh;
+  border-radius: 30px;
+  margin: 8% 1.5% 1.5% 1.5%;
+  position: relative;
+}
+.slogan{
+  position: absolute;
+  top: 25%;
+  left: 2%;
+}
+.feature{
+  display: flex;
+  gap: 10px;
+}
+/* 診療時間テーブル① */
+.timetable{
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  background-color:rgba(255,255,255,0.9);
+  border-radius: 10px;
+  width: 450px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.timetable table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  padding: 10px;
+}
+.timetable th{
+  width: 40%;
+  font-size: 18px;
+  border: 1px solid #004BB1;
+  border-collapse: collapse;
+  text-align: center;
+  color: #004BB1;
+  padding: 10px;
+}
+.timetable td{
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #004BB1;
+  border-collapse: collapse;
+  color: #004BB1;
+  padding: 10px;
+}
+.sp_timetable{
+  display: none;
+}
+.wrapper{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+.title{
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+.title_white{
+  color: #fff;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 3%;
+}
+/* 当院の特徴 */
+.content{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.content::before{
+  content: "";
+  background-image: url(../images/concept/bg_01.png);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -18%;
+  left: -13%;
+  z-index: -1;
+}
+.content-left{
+  width: 45%;
+  padding: 2.5%;
+}
+.content-left h2{
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+.content-left p{
+  font-size: 18px;
+  line-height: 1.7;
+}
+.content-right{
+  width: 70%;
+  padding: 2.5%;
+}
+
+/* 診療内容 */
+.background_blue{
+  width: 100%;
+  background-color: #72AFD5;
+  position: relative;
+}
+.background_blue:before{
+  content: "";
+  background-image: url(../images/background/nami_01.png);
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: -140px;
+  left: 0;
+}
+.background_blue::after{
+  content: "";
+  background-image: url(../images/background/nami_02.png);
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: -198px;
+  left: 0;
+}
+.menu{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.menu_inner{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  border-left: solid #fff 3px;
+}
+.menu_inner:nth-child(4),.menu_inner:nth-child(8){
+  border-right: solid #fff 3px;
+}
+.menu_img{
+  width: 100px;
+  height: 100px;
+  background-color:#004BB1;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.menu_title{
+  margin: 0 auto;
+  color: #fff;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+.menu_about{
+  margin-bottom: 5%;
+}
+.menu_about .inner_txt{
+  color: #fff;
+  line-height: 1.7;
+}
+.menu_inner_txt{
+  color: #fff;
+  line-height: 1.7;
+}
+.menu_btn{
+  background-color: #fff;
+  border: solid 1px #004BB1;
+  border-width: 3px;
+  border-radius: 25px;
+  padding: 10px;
+  color: #004BB1;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+/* アクセス */
+.content_access{
+  display: flex;
+  justify-content: center;
+}
+.reserve_left{
+  width: 40%;
+  padding: 2.5%;
+}
+.reserve_left h3{
+  color: #fff;
+  text-align: center;
+}
+.reserve_left p{
+  color: #fff;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.time_sch{
+  background-color:rgba(255,255,255,0.9);
+  border-radius: 10px;
+  width: 450px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.time_sch table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  padding: 10px;
+}
+.time_sch th{
+  width: 40%;
+  font-size: 18px;
+  border: 1px solid #004BB1;
+  border-collapse: collapse;
+  text-align: center;
+  color: #004BB1;
+  padding: 10px;
+}
+.time_sch td{
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #004BB1;
+  border-collapse: collapse;
+  color: #004BB1;
+  padding: 10px;
+}
+.tel_num{
+  font-size: 24px;
+}
+.access_right{
+  width: 70%;
+  padding: 2.5%;
+}
+.access_right iframe{
+  width: 100%;
+}
+/* お問い合わせ */
+.alert_txt{
+  position: relative;
+  padding: 10px;
+  color: #0075a9;
+  border-radius: 0 10px 10px 10px;
+  background: #d8ecf5;
+  width: 50%;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.alert_txt::before {
+  font-family: 'Font Awesome 5 Free';
+  font-size: 15px;
+  position: absolute;
+  top: -24px;
+  left: 0;
+  height: 24px;
+  padding: 0 1em;
+  content: '\f0a4  注意';
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  background: #0075a9;
+}
+.contact_box{
+  padding-top: 3%;
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  display: flex;
+}
+.contact_box_title{
+  width: 30%;
+  font-size: 18px;
+}
+.contact_box_form{
+  width: 70%;
+  height: 5.5vh;
+  font-size: 18px;
+  color: #999;
+  padding-left: 5px;
+  border: 3px solid #72AFD5;
+  border-radius: 10px;
+}
+.contact_box_textarea{
+  width: 70%;
+  height: 30vh;
+  padding: 5px;
+  font-size: 18px;
+  border: 3px solid #72AFD5;
+  border-radius: 10px;
+  color: #999;
+}
+.contact_btn{
+  display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 20%;
+  text-align: center;
+  width: 150px;
+  background-color: #72AFD5;
+  color: #fff;
+  border: solid 1px#72AFD5;
+  border-radius: 15px;
+  padding:10px;
+}
+/* フッター */
+.md-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #35363b;
+}
+.footer {
+  padding: 2rem;
+  font-size: 15px;
+  color: #fff;
+  background-color: #72AFD5;
+}
+
+.footer__navi {
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer__navi a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__navi a:hover {
+  color: #fff;
+}
+
+.footer__navi li {
+  display: inline-block;
+}
+
+.footer__navi li:not(:last-child) {
+  margin-right: 16px;
+}
+
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.footer__logo img{
+  width: 70%;
+}
+
+@media(max-width:1300px){
+  /* header */
+  .main-nav{
+    left: 35%;
+  }
+}
+
+/* タブレット版 */
+@media(max-width:1000px){
+  /* ヘッダー */
+  .page-header h1 {
+    top: 15%;
+}
+  .reserve_num{
+    font-size: 18px;
+  }
+  .main-nav{
+    left: 20%;
+  }
+  .main-nav li a{
+    padding: 8px;
+    font-size: 16px;
+  }
+  /* 当院の特徴 */
+  .content-left h2{
+    font-size: 24px;
+    margin-bottom: 5%;
+  }
+  .content-left p{
+    font-size: 16px;
+  }
+  /* アクセス */
+  .content_access{
+    flex-direction: column;
+  }
+  .content_access .reserve_left{
+   order: 2;
+   display: block;
+   margin: 0 auto;
+   width: 80%;
+  }
+  .time_sch{
+    margin: 0 auto;
+  }
+  .content_access .access_right{
+   order: 1;
+   display: block;
+   margin: 0 auto;
+   width: 80%;
+  }
+  /* お問い合わせ */
+  .alert_txt{
+    width: 70%;
+  }
+  .contact_box{
+    width: 100%;
+  }
+  .background_blue::before{
+    background-image: url(../images/background/nami_03.png);
+    top: -3.5%;
+  }
+  .background_blue::after{
+    background-image: url(../images/background/nami_04.png);
+    bottom: -11%;
+  }
+  /* フッター */
+  .md-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .copyright {
+    text-align: left;
+  }
+}
+/* モバイル版 */
+@media(max-width:600px){
+  /* header */
+  .page-header h1{
+    top: 35%;
+  }
+  .main-nav{
+    display: none;
+  }
+  .reserve{
+    display: none;
+  }
+  .mainview{
+    min-height: 35vh;
+    margin: 30% 1.5% 1.5% 1.5%;
+  }
+  .timetable{
+    display: none;
+  }
+  /* バーガー */
+  .sp_burger{
+    display: block;
+    margin-top: 7%;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/burger/burger.svg);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    z-index: 42;
+    background-color: #ddd;
+  }
+  .sp_burger.is-active{
+    background-image: url(../images/burger/close.svg);
+  }
+  .sp_burger_menu{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 35vh;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 40;
+    background-color:#fff;
+    display: none;
+  }
+  .sp_burger_menu ul{
+    width: 80%;
+  }
+  .sp_burger_menu a{
+    font-size: 18px;
+    color: #000000;
+  }
+  .sp_burger_menu li{
+    margin: 20px 0;
+    width: 100%;
+    border-bottom:solid #72AFD5 3px;
+  }
+  .sp_burger_menu.is-active{
+    display: flex;
+  }
+  /* sp版スローガン */
+  .slogan{
+    top: 76%;
+  }
+  /* sp版の最初の診療時間 */
+  .sp_timetable{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 360px;
+    padding: 3%;
+    box-sizing: border-box;
+  }
+  .sp_timetable table{
+    background-color:rgba(114,175,213,0.9);
+    border-radius: 10px;
+    border-spacing: 0;
+    width: 100%;
+  }
+  .sp_timetable th{
+    width: 20%;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    border-right:  1px solid #fff;
+    color: #fff;
+    padding: 10px;
+  }
+  .sp_timetable td{
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #fff;
+    border-right:  1px solid #fff;
+    color: #fff;
+    padding: 5px;
+  }
+  /* 当院の特徴 */
+  .content{
+    flex-direction: column;
+  }
+  .content::before{
+    top: -10%;
+    left: -4%;
+    width: 40%;
+    height: 100%;
+    background-size: contain;
+  }
+  .content-left{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .content-right{
+    width: 100%;
+    margin: 0 auto;
+  }
+  /* 診療内容 */
+  .background_blue::before{
+    background-image: url(../images/background/nami_05.png);
+    top: -1.5%;
+  }
+  .background_blue::after{
+    background-image: url(../images/background/nami_06.png);
+    bottom: -8.9%;
+  }
+  .menu_inner{
+    width: 50%;
+  }
+  .menu_inner:nth-child(2),.menu_inner:nth-child(6){
+    border-right: solid #fff 3px;
+  }
+  /* アクセス */
+  .reserve_txt{
+    font-size: 15px;
+  }
+  .content_access .reserve_left{
+    width: 100%;
+  }
+  /* テーブル */
+  .reserve_left .time_sch{
+    width: 330px;
+    padding: 3%;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .reserve_left .time_sch table{
+    border-radius: 10px;
+    border-spacing: 0;
+    width: 100%;
+  }
+  .reserve_left .time_sch th{
+    width: 20%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .reserve_left .time_sch td{
+    font-size: 14px;
+    padding: 5px;
+  }
+  .content_access .access_right{
+    width: 100%;
+  }
+  /* お問い合わせ */
+  .alert_txt{
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+  .contact_box{
+    width: 100%;
+    padding-top: 5%;
+    flex-direction: column;
+  }
+  .contact_box_title{
+    width: 50%;
+    text-align: start;
+  }
+  .contact_box_form{
+    margin: 0 auto;
+    width: 100%;
+  }
+  .contact_box_textarea{
+    width: 100%;
+  }
+  .contact_btn{
+    margin-top: 10%;
+  }
+}
